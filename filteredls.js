@@ -17,7 +17,7 @@ const checkPathExists = fnpath => fs.exists(fnpath, (exists) => {
 });
 
 // for testing
-const noOfFiles = 0;
+
 const io = (arg1, arg2) => {
   const dirPath = arg1;
   const fileExt = arg2;
@@ -29,12 +29,16 @@ const io = (arg1, arg2) => {
     return false;
   }
   // list is array of filename
+
   fs.readdir(dirPath, (err, list) => {
     if (err) { console.log('file error'); return false; }
+
     const result = list.filter(file => path.extname(file).toLowerCase() === `.${fileExt}`);
+
     result.forEach((item) => {
       console.log(item);
     });
+
     return result;
   });
   console.log(true);
