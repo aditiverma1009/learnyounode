@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for async_io.js</title>
+    <title>Code coverage report for filteredls.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="prettify.css" />
     <link rel="stylesheet" href="base.css" />
@@ -16,28 +16,28 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="index.html">All files</a> async_io.js
+      <a href="index.html">All files</a> filteredls.js
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">53.57% </span>
-        <span class="quiet">Statements</span>
-        <span class='fraction'>15/28</span>
-      </div>
-      <div class='fl pad1y space-right2'>
-        <span class="strong">41.67% </span>
-        <span class="quiet">Branches</span>
-        <span class='fraction'>5/12</span>
-      </div>
-      <div class='fl pad1y space-right2'>
         <span class="strong">60% </span>
-        <span class="quiet">Functions</span>
-        <span class='fraction'>3/5</span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>18/30</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">56% </span>
+        <span class="strong">58.33% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>7/12</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">42.86% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>3/7</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">65.38% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>14/25</span>
+        <span class='fraction'>17/26</span>
       </div>
     </div>
   </div>
@@ -100,50 +100,76 @@
 55
 56
 57
-58</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -158,69 +184,82 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const fs = require('fs');
+const path = require('path');
 &nbsp;
 const validateIP = (validatearg) =&gt; {
-  <span class="missing-if-branch" title="if path not taken" >I</span>if (validatearg === null || validatearg === undefined) {
-<span class="cstat-no" title="statement not covered" >    return true;</span>
+  // console.log(validatearg, '****');
+  if (validatearg === null || validatearg === undefined) {
+    return true;
   }
   return false;
 };
 &nbsp;
-const checkPathExists = path =&gt; fs.exists(path, <span class="fstat-no" title="function not covered" >(e</span>xists) =&gt; {
+const checkPathExists = fnpath =&gt; fs.exists(fnpath, <span class="fstat-no" title="function not covered" >(e</span>xists) =&gt; {
 <span class="cstat-no" title="statement not covered" >  if (exists) {</span>
 <span class="cstat-no" title="statement not covered" >    return true;</span>
   }
 <span class="cstat-no" title="statement not covered" >  return false;</span>
 });
 &nbsp;
-const io = () =&gt; {
-  const args = process.argv[2];
-  <span class="missing-if-branch" title="if path not taken" >I</span>if (validateIP((args)) === true) {
+// for testing
+const io = (arg1, arg2) =&gt; {
+  const dirPath = arg1;
+  const fileExt = arg2;
+  // console.log(fileExt, '###');
+  if (validateIP(dirPath) === true) {
+    return false;
+  }
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (checkPathExists(dirPath) === false) {
 <span class="cstat-no" title="statement not covered" >    return false;</span>
   }
-  const filepath = args;
-  <span class="missing-if-branch" title="if path not taken" >I</span>if (checkPathExists(filepath) === false) {
-<span class="cstat-no" title="statement not covered" >    return false;</span>
-  }
-  fs.readFile(filepath, <span class="fstat-no" title="function not covered" >(e</span>rr, data) =&gt; {
+  // list is array of filename
+  fs.readdir(dirPath, <span class="fstat-no" title="function not covered" >(e</span>rr, list) =&gt; {
 <span class="cstat-no" title="statement not covered" >    if (err) { <span class="cstat-no" title="statement not covered" >console.log('file error'); <span class="cstat-no" title="statement not covered" ></span>return false; </span>}</span>
-    // console.log(typeof (data));// it is a buffer object
-    const str = <span class="cstat-no" title="statement not covered" >data.toString();</span>
-    // console.log(typeof (str));// obj converted to string
-    const newstr = <span class="cstat-no" title="statement not covered" >str.split('\n');</span>
-<span class="cstat-no" title="statement not covered" >    console.log(newstr.length - 1);</span>
-    // console.log(data);
-<span class="cstat-no" title="statement not covered" >    return true;</span>
+    const result = <span class="cstat-no" title="statement not covered" >list.filter(<span class="fstat-no" title="function not covered" >fi</span>le =&gt; <span class="cstat-no" title="statement not covered" >path.extname(file) === `.${fileExt}`)</span>;</span>
+<span class="cstat-no" title="statement not covered" >    result.forEach(<span class="fstat-no" title="function not covered" >(i</span>tem) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      console.log(item);</span>
+    });
+<span class="cstat-no" title="statement not covered" >    return result;</span>
   });
-  // console.log('working');
+  console.log(true);
   return true;
 };
-io();
+module.exports = io;
+&nbsp;
+// for verifying
+// const io = () =&gt; {
+//   const dirPath = process.argv[2];
+//   const fileExt = process.argv[3];
+//   //console.log(fileExt, '###');
+//   if (validateIP(dirPath) === true) {
+//     return false;
+//   }
+//   if (checkPathExists(dirPath) === false) {
+//     return false;
+//   }
+//   // list is array of filename
+//   fs.readdir(dirPath, (err, list) =&gt; {
+//     if (err) { console.log('file error'); return false; }
+//     const result = list.filter(file =&gt; path.extname(file) === `.${fileExt}`);
+//     result.forEach((item) =&gt; {
+//       console.log(item);
+//     });
+//     return result;
+//   });
+//   return true;
+// };
+// io();
 // const argue = process.argv;
 // io(argue);
 // io('/Users/aditiverma/Documents/GitHub/learnyounode/aditi1.txt');
 // io('/Users/aditiverma/Documents/GitHub/learnyounode/aditi1.txt');
-module.exports = io;
-&nbsp;
-// given solution
-// var fs = require('fs')
-//    var file = process.argv[2]
-//
-//    fs.readFile(file, function (err, contents) {
-//      if (err) {
-//        return console.log(err)
-//      }
-//      // fs.readFile(file, 'utf8', callback) can also be used
-//      var lines = contents.toString().split('\n').length - 1
-//      console.log(lines)
-//    })
 &nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Jan 28 2018 16:24:11 GMT+0530 (IST)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Jan 28 2018 16:54:00 GMT+0530 (IST)
 </div>
 </div>
 <script src="prettify.js"></script>

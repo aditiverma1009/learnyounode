@@ -1,14 +1,13 @@
-
-const tester = require('./filteredls.js');
+const tester = require('./filteredls');
 
 describe('To check all possible cases', () => {
   test('null', () => {
     // global.console.log = jest.fn();
-    expect(tester(null)).toBe(false);
+    expect(tester(null, null)).toBe(false);
   });
   test('undefined', () => {
     // global.console.log = jest.fn();
-    expect(tester(undefined)).toBe(false);
+    expect(tester(undefined, undefined)).toBe(false);
   });
 });
 // describe('To check console.log activity', () => {
@@ -26,13 +25,15 @@ describe('To check all possible cases', () => {
 describe('To check path', () => {
   test('correctness of path', () => {
     global.console.log = jest.fn();
-    tester('/Users/aditiverma/Documents/GitHub/learnyounode/aditi1.txt');
-    expect(console.log).toHaveBeenCalledWith('working');
+    tester('/Users/aditiverma/Documents/GitHub/learnyounode/', 'txt');
+    expect(console.log).toHaveBeenCalledWith(true);
   });
 });
-describe('To check console.log', () => {
-  test('Ouput should be a boolean true if the entire function is being executed', () => {
+
+describe('To check path', () => {
+  test('correctness of path', () => {
     global.console.log = jest.fn();
-    expect(true).toBe(true);
+    tester('/Users/aditiverma/Documents/GitHub/learnyounode/', 'TXT');
+    expect(console.log).toHaveBeenCalledWith(true);
   });
 });
