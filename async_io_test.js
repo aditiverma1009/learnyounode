@@ -25,7 +25,7 @@ describe('To check all possible cases', () => {
 // });
 describe('To check path', () => {
   test('correctness of path', () => {
-    global.console.log = jest.fn();
+    global.console.log = jest.fn(); // used to check console.log type of inbuilt functions
     tester('/Users/aditiverma/Documents/GitHub/learnyounode/aditi1.txt');
     expect(console.log).toHaveBeenCalledWith('working');
   });
