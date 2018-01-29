@@ -1,7 +1,7 @@
 // testing for sync functions
 const tester = require('./httpclient');
 
-describe('To check all possible cases', () => {
+describe('To check all invalid cases', () => {
   test('null', (done) => {
     function callback(data) {
       expect(data).toBe(false);
@@ -10,10 +10,25 @@ describe('To check all possible cases', () => {
     tester(null, callback);
     // global.console.log = jest.fn();
   });
-  // test('undefined', () => {
-  //   // global.console.log = jest.fn();
-  //   expect(tester(undefined, undefined)).toBe(false);
-  // });
+  test('undefined', (done) => {
+    function callback(data) {
+      expect(data).toBe(false);
+      done();
+    }
+    tester(undefined, callback);
+    // global.console.log = jest.fn();
+  });
+});
+// not working with url - but printing website response
+describe('To check all possible cases', () => {
+  test('testing url', (done) => {
+    function callback(data) {
+      expect(data).toBe(false);
+      done();
+    }
+    tester('http://www.oplador.com', callback);
+    // global.console.log = jest.fn();
+  });
 });
 // describe('To check console.log activity', () => {
 //   test('checking working of console.log for file with 3 lines', () => {

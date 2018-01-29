@@ -17,14 +17,14 @@ function httpclient(arg1, callback) {
   http.get(arg1, (response) => {
     response.setEncoding('utf8');
     // console.log(dataUTF);
-    response.on('error', (err) => {
-      callback(err.code);
+    response.on('err', () => {
+      callback(false);
     });
 
     response.on('data', (chunk) => {
       rawData = `${chunk}`;
       console.log(rawData);
-      callback(rawData);
+      callback(true);
     });
   });
 }
