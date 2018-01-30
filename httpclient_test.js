@@ -4,7 +4,7 @@ const tester = require('./httpclient');
 describe('To check all invalid cases', () => {
   test('null', (done) => {
     function callback(data) {
-      expect(data).toBe(false);
+      expect(data).toBe('error');
       done();
     }
     tester(null, callback);
@@ -12,7 +12,7 @@ describe('To check all invalid cases', () => {
   });
   test('undefined', (done) => {
     function callback(data) {
-      expect(data).toBe(false);
+      expect(data).toBe('error');
       done();
     }
     tester(undefined, callback);
@@ -23,32 +23,12 @@ describe('To check all invalid cases', () => {
 describe('To check all possible cases', () => {
   test('testing url', (done) => {
     function callback(data) {
-      expect(data).toBe(false);
+      expect(data).toMatch('data');
       done();
     }
     tester('http://www.oplador.com', callback);
     // global.console.log = jest.fn();
   });
 });
-// describe('To check console.log activity', () => {
-//   test('checking working of console.log for file with 3 lines', () => {
-//     global.console.log = jest.fn();
-//     tester('/Users/aditiverma/Documents/GitHub/learnyounode/aditi1.txt');
-//     expect(console.log).toHaveBeenCalledWith(3);
-//   });
-//   test('checking working of console.log for empty file', () => {
-//     global.console.log = jest.fn();
-//     tester('/Users/aditiverma/Documents/GitHub/learnyounode/aditi2.txt');
-//     expect(console.log).toHaveBeenCalledWith(0);
-//   });
-// });
-
-//
-//
-// describe('To check path', () => {
-//   test('correctness of path', () => {
-//     global.console.log = jest.fn();
-//     tester('/Users/aditiverma/Documents/GitHub/learnyounode/', 'TXT');
-//     expect(console.log).toHaveBeenCalledWith(true);
-//   });
-// });
+// error test case
+// pass http://www.oplador.com/404
