@@ -11,6 +11,16 @@ describe('To check all possible cases', () => {
     expect(tester(undefined)).toBe(false);
   });
 });
+describe('To check path of file', () => {
+  test('with correct path', () => {
+    // global.console.log = jest.fn();
+    expect(tester('/Users/aditiverma/Documents/GitHub/learnyounode/aditi0.txt')).toBe(false);
+  });
+  test('undefined', () => {
+    // global.console.log = jest.fn();
+    expect(tester(undefined)).toBe(false);
+  });
+});
 describe('To check console.log activity', () => {
   test('checking working of console.log for file with 3 lines', () => {
     global.console.log = jest.fn();
