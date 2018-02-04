@@ -26,7 +26,7 @@ describe('To check if path exists', () => {
     }
     tester('/Users/aditiverma/Documents/GitHub/learnyounode/aditi1.txt', callback);
   });
-  // also check type of return value
+
   // test('If path does not exists', () => {
   //   expect(tester('/Users/aditiverma/Documents/GitHub/learnyounode/adi.txt')).toBe(false);
   // });
