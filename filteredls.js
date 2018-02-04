@@ -9,12 +9,12 @@ const validateIP = (validatearg) => {
   return false;
 };
 
-const checkPathExists = fnpath => fs.exists(fnpath, (exists) => {
-  if (exists) {
-    return true;
-  }
-  return false;
-});
+// const checkPathExists = fnpath => fs.exists(fnpath, (exists) => {
+//   if (exists) {
+//     return true;
+//   }
+//   return false;
+// });
 
 // for testing
 
@@ -25,9 +25,9 @@ const io = (arg1, arg2, callback) => {
   if (validateIP(dirPath) === true) {
     return false;
   }
-  if (checkPathExists(dirPath) === false) {
-    return false;
-  }
+  // if (checkPathExists(dirPath) === false) {
+  //   return false;
+  // }
   // list is array of filename
 
   fs.readdir(dirPath, (err, list) => {

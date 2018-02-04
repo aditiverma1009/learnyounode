@@ -27,19 +27,3 @@ describe('To check if path exists', () => {
   });
   // NOT BEING ABLE TO CHECK FOR INCORRECT PATH -HELP
 });
-
-// describe('To check completion of main function', () => {
-//   test('correct working -printing list', () => {
-//     global.console.log = jest.fn();
-//     tester('/Users/aditiverma/Documents/GitHub/learnyoun/', 'txt');
-//     expect(console.log).toHaveBeenCalledWith(true);
-//   });
-// });
-//
-// describe('To check completion of main function', () => {
-//   test('correct working -printing list', () => {
-//     global.console.log = jest.fn();
-//     tester('/Users/aditiverma/Documents/GitHub/learnyounode/', 'TXT');
-//     expect(console.log).toHaveBeenCalledWith(true);
-//   });
-// });
