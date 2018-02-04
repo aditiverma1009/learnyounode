@@ -1,49 +1,29 @@
-const fs = require('fs');
-const path = require('path');
-// const mod = require('./module.js');
+// for verification
+const moduleImported = require('./module');
 
-const io = (arg1, arg2, callback) => {
-  const dirPath = arg1;
-  const fileExt = arg2;
-  // console.log(fileExt, '###');
+const dir = process.argv[2];
+const filterStr = process.argv[3];
+moduleImported(dir, filterStr, (err, list) => {
+  if (err) {
+    return console.error('There was an error:', err);
+  }
 
-  fs.readdir(dirPath, (err, list) => {
-    if (err) {
-      return callback(err);
-    }
-
-    const result = list.filter(file => path.extname(file).toLowerCase() === `.${fileExt}`);
-    return callback(null, result);
+  list.forEach((file) => {
+    console.log(file);
   });
-};
+  return true;
+});
 
-// io('/Users/aditiverma/Documents/GitHub/learnyounode/', 'txt');
-// io();
-module.exports = io;
 
-// for verifying
-// const io = () => {
-//   const dirPath = process.argv[2];
-//   const fileExt = process.argv[3];
-//   //console.log(fileExt, '###');
-//   if (validateIP(dirPath) === true) {
-//     return false;
-//   }
-//   if (checkPathExists(dirPath) === false) {
-//     return false;
-//   }
-//   // list is array of filename
-//   fs.readdir(dirPath, (err, list) => {
-//     if (err) { console.log('file error'); return false; }
-//     const result = list.filter(file => path.extname(file) === `.${fileExt}`);
-//     result.forEach((item) => {
-//       console.log(item);
-//     });
-//     return result;
-//   });
-//   return true;
-// };
-// io();
-// const argue = process.argv;
-// io(argue);
-// io('/Users/aditiverma/Documents/GitHub/learnyounode/aditi1.txt');
+// entire under fn ...err list thingy
+// is THE callback fn which is being completely passed as callback
+// to module.js where it acts as callback fn
+
+
+/* moduleImported() is used to call our module function.
+Dir, filterStr, and a callback function are passed as arguments.
+The callback receives list as an argument.
+Inside of the callback function, we are looping through list with the forEach() method.
+We are passing a callback function to the forEach() method.
+The callback accepts file as an argument,
+and logs file to the console with the console.log()method. */
