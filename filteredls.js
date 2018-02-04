@@ -2,47 +2,28 @@ const fs = require('fs');
 const path = require('path');
 
 const validateIP = (validatearg) => {
-  // console.log(validatearg, '****');
   if (validatearg === null || validatearg === undefined) {
     return true;
   }
   return false;
 };
 
-// const checkPathExists = fnpath => fs.exists(fnpath, (exists) => {
-//   if (exists) {
-//     return true;
-//   }
-//   return false;
-// });
 
 // for testing
 
 const io = (arg1, arg2, callback) => {
   const dirPath = arg1;
   const fileExt = arg2;
-  // console.log(fileExt, '###');
-  if (validateIP(dirPath) === true) {
-    return false;
-  }
-  // if (checkPathExists(dirPath) === false) {
-  //   return false;
-  // }
-  // list is array of filename
-
   fs.readdir(dirPath, (err, list) => {
-    if (err) { console.log('file error'); return false; }
-
+    if (err) { console.log('file error'); return callback([]); }
+    if (list === undefined || list === null) { return callback([]); }
     const result = list.filter(file => path.extname(file).toLowerCase() === `.${fileExt}`);
-
     result.forEach((item) => {
       console.log(item);
     });
     callback(result);
     return true;
   });
-  // console.log(true);
-  return true;
 };
 module.exports = io;
 

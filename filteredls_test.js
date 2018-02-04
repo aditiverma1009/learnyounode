@@ -1,13 +1,21 @@
 const tester = require('./filteredls');
 
-describe('To check all possible cases', () => {
-  test('null', () => {
+describe('To check invalid path', () => {
+  test('null', (done) => {
+    function callback(data) {
     // global.console.log = jest.fn();
-    expect(tester(null, null)).toBe(false);
+      expect(data).toEqual([]);
+      done();
+    }
+    tester('ioio/', 'txt', callback);
   });
-  test('undefined', () => {
+  test('testing with invalid extension', (done) => {
+    function callback(data) {
     // global.console.log = jest.fn();
-    expect(tester(undefined, undefined)).toBe(false);
+      expect(data).toEqual([]);
+      done();
+    }
+    tester('./', 'blah', callback);
   });
 });
 describe('To check if path exists', () => {
