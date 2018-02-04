@@ -9,7 +9,10 @@ function httpclient(arg1, callback) {
   http.get(arg1, (response) => {
     response.setEncoding('utf-8');
     // console.log(dataUTF);
-
+    // let body = [];
+    // request.on('data', (chunk) => {
+    // body.push(chunk);
+    //  })
     return callback(response.statusCode);
   }).on('error', e => callback(e.code));
 }
