@@ -7,36 +7,32 @@ const validateIP = (validatearg) => {
   return false;
 };
 
-const checkPathExists = path => fs.exists(path, (exists) => {
-  if (exists) {
-    return true;
-  }
-  return false;
-});
+// const checkPathExists = path => fs.exists(path, (exists) => {
+//   if (exists) {
+//     return true;
+//   }
+//   return false;
+// });
 
-const io = () => {
-  const args = process.argv[2];
+const io = (args, callback) => {
   if (validateIP((args)) === true) {
     return false;
   }
-  const filepath = args;
-  if (checkPathExists(filepath) === false) {
-    return false;
-  }
-  fs.readFile(filepath, (err, data) => {
-    if (err) { console.log('file error'); return false; }
-    // console.log(typeof (data));// it is a buffer object
+  // if (checkPathExists(args)) {
+  //   return true;
+  // }
+  let solution = 0;
+  fs.readFile(args, (err, data) => {
+    if (err) { return false; }
     const str = data.toString();
-    // console.log(typeof (str));// obj converted to string
     const newstr = str.split('\n');
-    console.log(newstr.length - 1);
-    // console.log(data);
+    solution = newstr.length - 1;
+    callback(solution);
     return true;
   });
-  // console.log('working');
   return true;
 };
-io();
+
 // const argue = process.argv;
 // io(argue);
 // io('/Users/aditiverma/Documents/GitHub/learnyounode/aditi1.txt');

@@ -1,38 +1,34 @@
 
-const tester = require('./filteredls.js');
+const tester = require('./async_io.js');
 
 describe('To check all possible cases', () => {
   test('null', () => {
-    // global.console.log = jest.fn();
     expect(tester(null)).toBe(false);
   });
   test('undefined', () => {
-    // global.console.log = jest.fn();
     expect(tester(undefined)).toBe(false);
   });
 });
-// describe('To check console.log activity', () => {
-//   test('checking working of console.log for file with 3 lines', () => {
-//     global.console.log = jest.fn();
-//     tester('/Users/aditiverma/Documents/GitHub/learnyounode/aditi1.txt');
-//     expect(console.log).toHaveBeenCalledWith(3);
-//   });
-//   test('checking working of console.log for empty file', () => {
-//     global.console.log = jest.fn();
-//     tester('/Users/aditiverma/Documents/GitHub/learnyounode/aditi2.txt');
-//     expect(console.log).toHaveBeenCalledWith(0);
-//   });
-// });
-describe('To check path', () => {
-  test('correctness of path', () => {
-    global.console.log = jest.fn(); // used to check console.log type of inbuilt functions
-    tester('/Users/aditiverma/Documents/GitHub/learnyounode/aditi1.txt');
-    expect(console.log).toHaveBeenCalledWith('working');
+// can't check console.log as the function read file is async
+// console is not called
+describe('To check if path exists', () => {
+  test('If path exists', (done) => {
+    function callback(data) {
+      expect(data).toBe(3);
+      done();
+    }
+    tester('/Users/aditiverma/Documents/GitHub/learnyounode/aditi1.txt', callback);
   });
-});
-describe('To check console.log', () => {
-  test('Ouput should be a boolean true if the entire function is being executed', () => {
-    global.console.log = jest.fn();
-    expect(true).toBe(true);
+  test('If the data is a number', (done) => {
+    function callback(data) {
+      expect(typeof (data)).toBe(typeof (1));
+      done();
+    }
+    tester('/Users/aditiverma/Documents/GitHub/learnyounode/aditi1.txt', callback);
   });
+  // also check type of return value
+  // test('If path does not exists', () => {
+  //   expect(tester('/Users/aditiverma/Documents/GitHub/learnyounode/adi.txt')).toBe(false);
+  // });
+  // NOT BEING ABLE TO CHECK FOR INCORRECT PATH -HELP
 });
