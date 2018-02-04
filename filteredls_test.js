@@ -10,30 +10,36 @@ describe('To check all possible cases', () => {
     expect(tester(undefined, undefined)).toBe(false);
   });
 });
-// describe('To check console.log activity', () => {
-//   test('checking working of console.log for file with 3 lines', () => {
-//     global.console.log = jest.fn();
-//     tester('/Users/aditiverma/Documents/GitHub/learnyounode/aditi1.txt');
-//     expect(console.log).toHaveBeenCalledWith(3);
-//   });
-//   test('checking working of console.log for empty file', () => {
-//     global.console.log = jest.fn();
-//     tester('/Users/aditiverma/Documents/GitHub/learnyounode/aditi2.txt');
-//     expect(console.log).toHaveBeenCalledWith(0);
-//   });
-// });
-describe('To check path', () => {
-  test('correctness of path', () => {
-    global.console.log = jest.fn();
-    tester('/Users/aditiverma/Documents/GitHub/learnyounode/', 'txt');
-    expect(console.log).toHaveBeenCalledWith(true);
+describe('To check if path exists', () => {
+  test('If path exists', (done) => {
+    function callback(data) {
+      expect(data).toEqual(['aditi1.txt', 'aditi2.txt', 'aditi3.TXT']);
+      done();
+    }
+    tester('/Users/aditiverma/Documents/GitHub/learnyounode/', 'txt', callback);
   });
+  test('If the data is a number', (done) => {
+    function callback(data) {
+      expect(typeof (data)).toBe(typeof ([]));
+      done();
+    }
+    tester('/Users/aditiverma/Documents/GitHub/learnyounode/', 'txt', callback);
+  });
+  // NOT BEING ABLE TO CHECK FOR INCORRECT PATH -HELP
 });
 
-describe('To check path', () => {
-  test('correctness of path', () => {
-    global.console.log = jest.fn();
-    tester('/Users/aditiverma/Documents/GitHub/learnyounode/', 'TXT');
-    expect(console.log).toHaveBeenCalledWith(true);
-  });
-});
+// describe('To check completion of main function', () => {
+//   test('correct working -printing list', () => {
+//     global.console.log = jest.fn();
+//     tester('/Users/aditiverma/Documents/GitHub/learnyoun/', 'txt');
+//     expect(console.log).toHaveBeenCalledWith(true);
+//   });
+// });
+//
+// describe('To check completion of main function', () => {
+//   test('correct working -printing list', () => {
+//     global.console.log = jest.fn();
+//     tester('/Users/aditiverma/Documents/GitHub/learnyounode/', 'TXT');
+//     expect(console.log).toHaveBeenCalledWith(true);
+//   });
+// });

@@ -18,7 +18,7 @@ const checkPathExists = fnpath => fs.exists(fnpath, (exists) => {
 
 // for testing
 
-const io = (arg1, arg2) => {
+const io = (arg1, arg2, callback) => {
   const dirPath = arg1;
   const fileExt = arg2;
   // console.log(fileExt, '###');
@@ -38,13 +38,14 @@ const io = (arg1, arg2) => {
     result.forEach((item) => {
       console.log(item);
     });
-
-    return result;
+    callback(result);
+    return true;
   });
-  console.log(true);
+  // console.log(true);
   return true;
 };
 module.exports = io;
+
 
 // for verifying
 // const io = () => {
@@ -72,4 +73,4 @@ module.exports = io;
 // const argue = process.argv;
 // io(argue);
 // io('/Users/aditiverma/Documents/GitHub/learnyounode/aditi1.txt');
-io('/Users/aditiverma/Documents/GitHub/learnyounode/', 'txt');
+// io('/Users/aditiverma/Documents/GitHub/learnyounode/', 'txt');
