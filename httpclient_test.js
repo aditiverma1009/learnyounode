@@ -9,4 +9,11 @@ describe('To check all valid cases', () => {
     };
     tester('http://www.oplador.com', callback);
   });
+  test('with a invalid url', (done) => {
+    const callback = (data) => {
+      expect(data).toBe('ENOTFOUND');
+      done();
+    };
+    tester('http://www.oplaaador.com', callback);
+  });
 });
