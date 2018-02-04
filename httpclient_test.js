@@ -16,4 +16,11 @@ describe('To check all valid cases', () => {
     };
     tester('http://www.oplaaador.com', callback);
   });
+  test('with a GOOGLE url', (done) => {
+    const callback = (data) => {
+      expect(data).toBe(302);
+      done();
+    };
+    tester('http://www.google.com', callback);
+  });
 });
