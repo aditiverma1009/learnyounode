@@ -11,4 +11,7 @@ describe('To check if path exists', () => {
     }
     tester('/Users/aditiverma/Documents/GitHub/learnyounode/', 'txt', callback);
   });
+  it('testing module.exports for return type', () => {
+    expect(typeof tester).toBe('function');
+  });
 });
